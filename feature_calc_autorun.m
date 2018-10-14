@@ -26,8 +26,8 @@ clc
 % for each participant put the name of foot, back, and hip data files here 
 % to be analyzed 
 
-dir1 = '/Users/amir/Documents/fatigue-changepoint/Data/Raw';
-dir2 = '/Users/amir/Documents/fatigue_IoT/data';
+dir1 = 'D:/GitHub/Fatigue Changepoint GitHub/fatigue-changepoint/Data/Raw';
+dir2 = 'D:/GitHub/Fatigue IoT GitHub/fatigue_IoT/data';
 
 Subject = {'Jim' , 'Anastasi', 'Tarun', 'Angela', 'Darya', 'Gary', 'Holly', 'Larry R', 'Lisa', 'Nicholas', 'Po', 'Alycia', 'Dave', 'Dorisha', 'Sean'};
 SubjectNum=[ 1   ,     2     ,    3   ,    4    ,    5   ,    6  ,    7   ,     8    ,   9   ,     10    ,  11 ,    12   ,   13  ,     14   ,   15   ];                     
@@ -55,10 +55,10 @@ SubjectNum=[ 1   ,     2     ,    3   ,    4    ,    5   ,    6  ,    7   ,     
 % Angela	20 #
 % Darya     21 #
 
-for sbjct = 1:1
+for sbjct = 1:15
 
-    sheet_name_foot_mat = fullfile([dir2, '/MMH-', char(Subject(sbjct)), '_Shimmer_CEA2_Calibrated_SD.xlsx']);
-    sheet_name_back_mat = fullfile([dir2, '/MMH-', char(Subject(sbjct)), '_Shimmer_CE9B_Calibrated_SD.xlsx']);
+    sheet_name_foot_mat = fullfile([dir2, '/MMH-', char(Subject(sbjct)), '_Shimmer_CEA2_Calibrated_SD.csv']);
+    sheet_name_back_mat = fullfile([dir2, '/MMH-', char(Subject(sbjct)), '_Shimmer_CE9B_Calibrated_SD.csv']);
 
     samplingrate = 51.2/2;
 
@@ -100,8 +100,7 @@ for sbjct = 1:1
     sheet_name_back = char(sheet_name_back_mat);
 
     % determine the sheet with the smallest size and use the end cell of that sheet as the end value for all trials   
-    whole_foot_array = xlsread(sheet_name_foot,1);
-    [num,txt,raw] = xlsread(sheet_name_foot,1);
+    whole_foot_array = xlsread(sheet_name_foot);
     whole_back_array = xlsread(sheet_name_back);
 
     %%
