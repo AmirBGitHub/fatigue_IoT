@@ -55,7 +55,7 @@ SubjectNum=[ 1   ,     2     ,    3   ,    4    ,    5   ,    6  ,    7   ,     
 % Angela	20 #
 % Darya     21 #
 
-for sbjct = 1:15
+for sbjct = 6:15
 
     sheet_name_foot_mat = fullfile([dir2, '/MMH-', char(Subject(sbjct)), '_Shimmer_CEA2_Calibrated_SD.csv']);
     sheet_name_back_mat = fullfile([dir2, '/MMH-', char(Subject(sbjct)), '_Shimmer_CE9B_Calibrated_SD.csv']);
